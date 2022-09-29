@@ -9,5 +9,4 @@ public class RoshkaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RoshkaApplication.class, args);
 	}
-
 }

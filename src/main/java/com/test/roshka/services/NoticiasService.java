@@ -1,9 +1,9 @@
 package com.test.roshka.services;
 
-import com.test.roshka.bean.Noticia;
+import org.springframework.http.ResponseEntity;
 
 public interface NoticiasService {
-	
-	public Noticia[] getObtenerNoticia(String textoBuscar);
+
+	public ResponseEntity<?> getObtenerNoticia(String textoBuscar) throws Exception;
 
 }

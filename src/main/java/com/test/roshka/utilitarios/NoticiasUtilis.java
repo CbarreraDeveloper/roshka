@@ -61,5 +61,9 @@ public class NoticiasUtilis {
         return fechaISO;
 
     }
+	
+	public static boolean isNullOrEmpty(Object object) {
+		return object == null || "".equals(object) ? Boolean.TRUE : Boolean.FALSE;
+	}
 
 }

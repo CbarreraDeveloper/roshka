@@ -2,40 +2,20 @@ package com.test.roshka.error;
 
 import org.springframework.http.HttpStatus;
 
-public class CustomInternalServerErrorException extends RuntimeException {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-	private static final long serialVersionUID = -4465219359431472700L;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class CustomInternalServerErrorException extends Exception {
+	
+
+	private static final long serialVersionUID = -7041388196973026088L;
 	private String codigo = "g100";
 	private String error = "Error interno del servidor";
-
-	public CustomInternalServerErrorException(String message, String codigo, String error) {
-		super(message);
-		this.codigo = codigo;
-		this.error = error;
-	}
-
-	public CustomInternalServerErrorException(String message) {
-		super(message);
-	}
-
-	public String getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getError() {
-		return error;
-	}
-
-	public void setError(String error) {
-		this.error = error;
-	}
-
-	public HttpStatus getStatus() {
-		return HttpStatus.INTERNAL_SERVER_ERROR;
-	}
-
+	private HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 }
